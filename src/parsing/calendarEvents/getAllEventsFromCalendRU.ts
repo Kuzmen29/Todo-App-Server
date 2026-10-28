@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 import { ICalendarEvents } from "./types";
 import { getEventsFromOneCalendarDayFromCalendRU } from "./getEventsFromOneCalendarDayFromCalendRU";
-import { IResponse } from "../../types";
+import { IServerResponse } from "../../types";
 
 // ! Парсинг ВСЕХ событий календаря ЦЕЛОГО года с сайта https://www.calend.ru/day .
 
@@ -15,7 +15,7 @@ import { IResponse } from "../../types";
 
 const EACH_MONTH_DAYS_NUMBER = [31, new Date().getFullYear() % 4 !== 0 ? 28 : 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-export async function getAllEventsFromCalendRU(): Promise<IResponse<ICalendarEvents>> {
+export async function getAllEventsFromCalendRU(): Promise<IServerResponse<ICalendarEvents>> {
 
     try {
 
