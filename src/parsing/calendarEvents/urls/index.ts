@@ -1,0 +1,1 @@
+export { CALEND_RU_URL } from "./calend.ru.url";

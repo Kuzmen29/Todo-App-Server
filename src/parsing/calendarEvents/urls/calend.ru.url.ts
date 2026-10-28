@@ -1,0 +1,1 @@
+export const CALEND_RU_URL = "https://www.calend.ru/day";
