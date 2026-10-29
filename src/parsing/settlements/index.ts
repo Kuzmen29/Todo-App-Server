@@ -1,0 +1,2 @@
+export { getCitiesAndTownsInRussiaFromWikipedia } from "./getCitiesAndTownsInRussiaFromWikipedia";
+export { getSettlementsAlphabeticallyFromWikipedia } from "./getSettlementsAlphabeticallyFromWikipedia";
