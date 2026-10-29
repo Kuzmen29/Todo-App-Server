@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 import { ICalendarEvents } from "./types";
 import { getEventsFromOneCalendarDayFromCalendRU } from "./getEventsFromOneCalendarDayFromCalendRU";
-import { IServerResponse } from "../../types";
+import { IParsingResponse } from "@types";
 
 // ! Парсинг ВСЕХ событий календаря ЦЕЛОГО года с сайта https://www.calend.ru/day .
 
@@ -15,62 +15,13 @@ import { IServerResponse } from "../../types";
 
 const EACH_MONTH_DAYS_NUMBER = [31, new Date().getFullYear() % 4 !== 0 ? 28 : 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-export async function getAllEventsFromCalendRU(): Promise<IServerResponse<ICalendarEvents>> {
+export async function getAllEventsFromCalendRU(): Promise<
+    IParsingResponse<ICalendarEvents>
+> {
 
     try {
 
         const browser = await puppeteer.launch();
-
-        // const page = await browser.newPage();
-
-        // await page.setRequestInterception(true);
-
-        // page.on('request', (request) => {
-
-        //     const resourceType = request.resourceType();
-
-        //     const url = request.url().toLowerCase();
-
-        //     // ! Блокируем «мусорные» скрипты по доменам
-
-        //     if (resourceType === 'script') {
-
-        //         if (
-        //             url.includes('google-analytics') ||
-        //             url.includes('doubleclick') ||
-        //             url.includes('yandex-metrica') ||
-        //             url.includes('hotjar') ||
-        //             url.includes('matomo')
-        //         ) {
-
-        //             return request.abort();
-
-        //         }
-        //     }
-
-        //     // Дальше обычная логика по типам
-
-        //     if (
-        //         [
-        //             'image',
-        //             'stylesheet',
-        //             'font',
-        //             'media',
-        //             'beacon',
-        //             'csp_report',
-        //             'texttrack',
-        //             'manifest',
-        //             'eventsource',
-        //             'websocket'
-        //         ].includes(resourceType)) {
-
-        //         return request.abort();
-
-        //     }
-
-        //     return request.continue();
-
-        // });
 
         const calendarEvents: ICalendarEvents = [];
 
@@ -131,8 +82,6 @@ export async function getAllEventsFromCalendRU(): Promise<IServerResponse<ICalen
 
             success: true,
 
-            status: 200,
-
             data: calendarEvents,
 
         };
@@ -142,8 +91,6 @@ export async function getAllEventsFromCalendRU(): Promise<IServerResponse<ICalen
         return {
 
             success: false,
-
-            status: 500,
 
             error: {
                 message: ["Ошибка при парсинге сайта.", error.message].join(" "),
