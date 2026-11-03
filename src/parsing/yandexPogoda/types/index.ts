@@ -1,0 +1,1 @@
+export { IYandexPogoda } from "./yandex.pogoda.type";

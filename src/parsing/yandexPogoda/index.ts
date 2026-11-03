@@ -1,0 +1,1 @@
+export { getWeatherFromYandexPogoda } from "./getWeatherFromYandexPogoda";
