@@ -1,0 +1,13 @@
+{
+    "Москва": {
+        "name": "Москва",
+        "country": "RU",
+        "state": "Moscow",
+        "localNames": {
+            "ru": "Москва",
+            "en": "Moscow"
+        },
+        "latitude": 55.7504461,
+        "longitude": 37.6174943
+    }
+}
