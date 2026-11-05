@@ -74,7 +74,7 @@ export function readGeocodingStorageByCoordinates<T>(
                         error: {
                             message: [
                                 "Ошибка при чтении хранилища геокодинга по координатам из базы данных.",
-                                writeGeocodingStorageByCoordinatesReturn.error,
+                                writeGeocodingStorageByCoordinatesReturn.error.message,
                             ].join(" ---> "),
                         },
                     };
