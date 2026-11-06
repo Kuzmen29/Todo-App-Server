@@ -21,9 +21,13 @@ const options = {
 };
 
 settlementsAPI(options);
+
 logsAPI(options);
+
 geocodingAPI(options);
+
 weatherAPI(options);
+
 calendarEventsAPI(options);
 
 const PORT = process.env.PORT ?? 3000;
