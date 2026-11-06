@@ -13,7 +13,7 @@ import {
     getGeographicalNameByCoordinates
 } from "@components/geocoding";
 
-export default function geocodingAPI({
+export function geocodingAPI({
     app,
 }: IServerOptions) {
 

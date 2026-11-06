@@ -10,7 +10,7 @@ import {
 } from "@parsing/settlements/types";
 import { DATA_PATH } from "@paths";
 
-export default function settlementsAPI({
+export function settlementsAPI({
     app,
 }: IServerOptions) {
 

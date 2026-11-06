@@ -1,7 +1,7 @@
 import { IServerOptions } from "@types";
 import { writeRequestLogs } from "@components/logs";
 
-export default function logsAPI({
+export function logsAPI({
     app,
 }: IServerOptions) {
 

@@ -1,8 +1,14 @@
-import {  IServerOptions, IServerResponse } from "@types";
+import {
+    IServerOptions,
+    IServerResponse
+} from "@types";
 import { IWeather } from "@components/weather/types";
-import { getWeatherByCity, getWeatherByCoordinates } from "@components/weather";
+import {
+    getWeatherByCity,
+    getWeatherByCoordinates
+} from "@components/weather";
 
-export default function weatherAPI({ 
+export function weatherAPI({
     app,
 }: IServerOptions) {
 
@@ -16,11 +22,11 @@ export default function weatherAPI({
 
             if (getWeatherByCityReturn.success) {
 
-                const result: IServerResponse<{weather : IWeather}> = {
+                const result: IServerResponse<{ weather: IWeather }> = {
                     success: true,
                     status: 200,
                     data: {
-                        weather: getWeatherByCityReturn.weather, 
+                        weather: getWeatherByCityReturn.weather,
                     },
                 };
 
@@ -32,7 +38,7 @@ export default function weatherAPI({
                     success: false,
                     status: 500,
                     error: {
-                        message: "Ошибка при получении данных о погоде по городу.", 
+                        message: "Ошибка при получении данных о погоде по городу.",
                     },
                 };
 
@@ -55,14 +61,14 @@ export default function weatherAPI({
 
             const longitude = request.query.longitude;
 
-            const getWeatherByCoordinatesReturn = await getWeatherByCoordinates({ 
+            const getWeatherByCoordinatesReturn = await getWeatherByCoordinates({
                 latitude: Number(latitude),
                 longitude: Number(longitude),
             });
 
             if (getWeatherByCoordinatesReturn.success) {
 
-                const result: IServerResponse<{weather : IWeather}> = {
+                const result: IServerResponse<{ weather: IWeather }> = {
                     success: true,
                     status: 200,
                     data: {
@@ -91,7 +97,7 @@ export default function weatherAPI({
             console.log(error);
 
         }
-        
+
     });
 
 }
