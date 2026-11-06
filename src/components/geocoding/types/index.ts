@@ -1,3 +1,4 @@
+export { ICoordinates } from "./coordinates.type";
 export { IGeocodingData } from "./geocoding.data.type";
 export { IGeocodingStorageByCities } from "./geocoding.storage.by.cities.type";
 export { IGeocodingStorageByCoordinates } from "./geocoding.storage.by.coordinates.type";
