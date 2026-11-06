@@ -6,7 +6,7 @@
  * 
  */
 
-export function getISODate(date: Date = new Date()) {
+export function getISOStringDate(date: Date = new Date()) {
 
     const year = date.getFullYear();
 

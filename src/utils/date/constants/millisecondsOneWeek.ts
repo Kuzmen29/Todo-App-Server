@@ -1,1 +1,1 @@
-export const MILLISECONDS_ONE_WEEK = 60 * 60 * 24 * 7 * 1000;
+export const MILLISECONDS_ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
