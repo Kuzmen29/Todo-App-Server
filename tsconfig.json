@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "es2018",
+        "module": "commonjs",
+        "allowJs": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "@/*": [
+                "./src/*",
+            ],
+            "@api": [
+                "./src/api/index",
+            ],
+            "@components/*": [
+                "./src/components/*",
+            ],
+            "@parsing/*": [
+                "./src/parsing/*",
+            ],
+            "@paths": [
+                "./src/paths/index",
+            ],
+            "@types": [
+                "./src/types/index",
+            ],
+            "@utils/*": [
+                "./src/utils/*",
+            ],
+        },
+    },
+}
